@@ -259,7 +259,7 @@
 		
 		
 		code_postal.autoComplete({
-			minChars: 1,
+			minChars: 2,
 			delay: 500,
 			source: function (term, response) {
 				$.getJSON('/auth/index/cities/', {q: term}, function (data) {
@@ -278,7 +278,7 @@
 		
 		
 		ville.autoComplete({
-			minChars: 1,
+			minChars: 2,
 			delay: 500,
 			source: function (term, response) {
 				$.getJSON('/auth/index/cities/', {q: term}, function (data) {

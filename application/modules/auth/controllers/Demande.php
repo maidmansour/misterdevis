@@ -231,9 +231,9 @@ class Auth_Form_Demande extends Auth_Form_Base {
     
     // upload audio file
     
-    $audio_file = new Zend_Form_Element_File( 'audio_file' );
-    $audio_file->setLabel( 'Conversation audio' )
-               ->setBelongsTo( 'Demande' );
+    //$audio_file = new Zend_Form_Element_File( 'audio_file' );
+    //$audio_file->setLabel( 'Conversation audio' )
+    //           ->setBelongsTo( 'Demande' );
     
     
     $this->addElements( [
@@ -251,8 +251,7 @@ class Auth_Form_Demande extends Auth_Form_Base {
       $qualification,
       $prix_mise_en_ligne,
       $prix_promo,
-      $publier_en_ligne,
-      $audio_file,
+      $publier_en_ligne
     
     ] );
     

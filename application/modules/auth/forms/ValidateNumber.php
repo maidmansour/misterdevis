@@ -19,8 +19,6 @@ class Auth_Form_ValidateNumber extends Zend_Validate_Abstract
 	public function isValid($value)
 	{		
      	$value = str_replace(',', '.', $value);
-
-     	die(var_dump($value));
      	
 	    if(is_numeric($value) && !empty($value)) {
             return true;
