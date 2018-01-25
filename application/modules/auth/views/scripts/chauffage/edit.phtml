@@ -36,6 +36,13 @@
 		display: block;
 		font-size: 12px;
 	}
+	
+	.form-group ul.errors li {
+		color: red;
+		padding: 5px 0;
+		font-size: 12px;
+		font-weight: bold;
+	}
 </style>
 <script type="text/javascript" src="<?= $this->baseUrl( 'resources_fo_ehcg/js/jquery.autocomplete.min.js' ); ?>"></script>
 
@@ -220,10 +227,10 @@
 										<?= $this->form->form_demande->prix_promo; ?>
 									</div>
 									<div class="col-md-6">
+										<?= $this->form->form_demande->publier_en_ligne; ?>
 										<div class="form-group">
 											<?= $this->form->form_demande->audio_file; ?>
 										</div>
-										<?= $this->form->form_demande->publier_en_ligne; ?>
 									</div>
 								</div>
 							</div>

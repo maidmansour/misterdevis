@@ -19,7 +19,7 @@ class Auth_Model_SallebainRepository extends EntityRepository {
     return $qb->from( $this->_entityName, 'ch' )
               ->select( 'd.id_demande, d.titre_demande, d.publier_en_ligne, p.nom_particulier, p.prenom_particulier,' .
                         'd.date_creation, d.date_publication, z.ville, c.adresse, z.code, u.firstname_user, u.lastname_user,' .
-                        'a.libelle as categorie, d.prix_mise_en_ligne' )
+                        'a.libelle as categorie, d.prix_mise_en_ligne,d.qualification' )
               ->leftJoin( 'ch.id_demande', 'd' )
               ->leftJoin( 'd.id_particulier', 'p' )
               ->leftJoin( 'd.id_chantier', 'c' )
@@ -142,6 +142,11 @@ class Auth_Model_SallebainRepository extends EntityRepository {
     $this->_em->flush();
     
     $demande->setId_chantier( $chantier );
+    
+    $this->_em->persist( $demande );
+    $this->_em->flush();
+    
+    $demande->saveAudio( $data['file'] );
     
     $this->_em->persist( $demande );
     $this->_em->flush();
